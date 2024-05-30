@@ -76,7 +76,7 @@ const Gallery = () => {
         paddingBottom={2}
         display="flex"
         justifyContent="left"
-        width={"50%"}
+        width={"20rem"}
         position="relative"
         alignItems={"center"}
         gap={1}

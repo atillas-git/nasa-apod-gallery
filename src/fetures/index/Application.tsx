@@ -52,6 +52,7 @@ const Application = () => {
             variant="contained"
             color="secondary"
             component={Link}
+            sx={{m:1}}
             to="/picture-of-the-day"
           >
             Picture of the Day

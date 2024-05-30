@@ -106,53 +106,34 @@ const Gallery = () => {
         paddingBottom={2}
         display="flex"
         justifyContent="space-between"
-        width={"100%"}
+        maxWidth={"fit-content"}
         position="relative"
         alignItems={"center"}
         gap={1}
       >
-        <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-          <StyledTextField
-            type="date"
-            value={searchDate}
-            onChange={(e) => setSearchDate(e.target.value)}
-            sx={{ flexGrow: 1 }}
-          />
-          <SearchButton
-            variant="contained"
-            color="primary"
-            onClick={() => handleSearch()}
-            sx={{ color: "common.white" }}
-            startIcon={<SearchIcon />}
-          >
-            Search
-          </SearchButton>
-          <SearchButton
-            variant="contained"
-            color="primary"
-            onClick={() => setSearchDate("")}
-            sx={{ color: "common.white" }}
-          >
-            Clear
-          </SearchButton>
-        </Box>
-        <Box
-          sx={{
-            backgroundColor: "primary.light",
-            width: "fit-content",
-            padding: 1,
-            borderRadius: "1rem",
-            mt: 2,
-          }}
+        <StyledTextField
+          type="date"
+          value={searchDate}
+          onChange={(e) => setSearchDate(e.target.value)}
+          sx={{ flexGrow: 1 }}
+        />
+        <SearchButton
+          variant="contained"
+          color="primary"
+          onClick={() => handleSearch()}
+          sx={{ color: "common.white" }}
+          startIcon={<SearchIcon />}
         >
-          <Pagination
-            count={10}
-            page={parseInt(page || "1")}
-            onChange={handlePageChange}
-            color="primary"
-            shape="rounded"
-          />
-        </Box>
+          Search
+        </SearchButton>
+        <SearchButton
+          variant="contained"
+          color="primary"
+          onClick={() => setSearchDate("")}
+          sx={{ color: "common.white" }}
+        >
+          Clear
+        </SearchButton>
       </Box>
       {loading ? (
         <Box display="flex" justifyContent="center">
@@ -188,6 +169,23 @@ const Gallery = () => {
                 </Grid>
               ))}
           </Grid>
+          <Box
+            sx={{
+              backgroundColor: "primary.light",
+              width: "fit-content",
+              padding: 1,
+              borderRadius: "1rem",
+              mt: 2,
+            }}
+          >
+            <Pagination
+              count={10}
+              page={parseInt(page || "1")}
+              onChange={handlePageChange}
+              color="primary"
+              shape="rounded"
+            />
+          </Box>
         </>
       )}
     </Box>

@@ -28,6 +28,14 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/gallery/:page",
+    element: (
+      <Layout>
+        <Gallerty />
+      </Layout>
+    ),
+  },
+  {
     path: "/picture-of-the-day",
     element: (
       <Layout>

@@ -169,23 +169,25 @@ const Gallery = () => {
                 </Grid>
               ))}
           </Grid>
-          <Box
-            sx={{
-              backgroundColor: "primary.light",
-              width: "fit-content",
-              padding: 1,
-              borderRadius: "1rem",
-              mt: 2,
-            }}
-          >
-            <Pagination
-              count={10}
-              page={parseInt(page || "1")}
-              onChange={handlePageChange}
-              color="primary"
-              shape="rounded"
-            />
-          </Box>
+          {!searchDate && (
+            <Box
+              sx={{
+                backgroundColor: "primary.light",
+                width: "fit-content",
+                padding: 1,
+                borderRadius: "1rem",
+                mt: 2,
+              }}
+            >
+              <Pagination
+                count={10}
+                page={parseInt(page || "1")}
+                onChange={handlePageChange}
+                color="primary"
+                shape="rounded"
+              />
+            </Box>
+          )}
         </>
       )}
     </Box>

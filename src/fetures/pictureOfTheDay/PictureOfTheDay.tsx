@@ -2,16 +2,10 @@ import { useEffect, useState } from "react";
 import { Container, Paper, Typography, Box } from "@mui/material";
 import Loading from "../../utils/loading/Loading";
 import pictureOfTheDayStyles from "./pictureOfTheyDay.styles";
-
-interface ApodData {
-  title: string;
-  explanation: string;
-  url: string;
-  date: string;
-}
+import { APODImage } from "../../types";
 
 const PictureOfTheDay = () => {
-  const [apodData, setApodData] = useState<ApodData | null>(null);
+  const [apodData, setApodData] = useState<APODImage | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 

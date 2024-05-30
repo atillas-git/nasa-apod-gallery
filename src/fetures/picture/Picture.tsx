@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Box, Card, CardMedia, CardContent, Typography } from "@mui/material";
+import { Box, Typography, Container, Paper } from "@mui/material";
 import { APODImage } from "../../types";
 import Loading from "../../utils/loading/Loading";
 
@@ -38,27 +38,37 @@ const Picture = () => {
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
+        p: 2,
+        overflowX: "hidden",
       }}
     >
-      <Card raised sx={{ maxWidth: 600, mx: "auto" }}>
-        <CardMedia
-          component="img"
-          height="400"
-          image={imageDetails?.url}
-          alt={imageDetails?.title}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {imageDetails?.title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {imageDetails?.explanation}
-          </Typography>
-          <Typography variant="body1" color="text.primary" marginTop={2}>
-            Date: {imageDetails?.date}
-          </Typography>
-        </CardContent>
-      </Card>
+      <Container maxWidth="md">
+        <Paper
+          sx={{
+            p: 4,
+            backgroundColor: "primary.main",
+            color: "primary.light",
+            borderRadius: "2rem",
+          }}
+        >
+          {imageDetails && (
+            <>
+              <Typography variant="h5" gutterBottom>
+                {imageDetails.title} - {imageDetails.date}
+              </Typography>
+              <Box
+                component="img"
+                src={imageDetails.url}
+                alt={imageDetails.title}
+                sx={{ width: "100%", height: "auto" }}
+              />
+              <Typography variant="body1" sx={{ marginTop: "20px" }}>
+                {imageDetails.explanation}
+              </Typography>
+            </>
+          )}
+        </Paper>
+      </Container>
     </Box>
   );
 };

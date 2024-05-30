@@ -45,7 +45,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/picture/:date",
-    element: <Picture />,
+    element: (
+      <Layout>
+        <Picture />
+      </Layout>
+    ),
   },
 ]);
 

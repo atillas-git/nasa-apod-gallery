@@ -14,7 +14,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
 import { APODImage } from "../../types";
 
-// Enhancing styles for TextField and Button
 const StyledTextField = styled(TextField)(({ theme }) => ({
   "& .MuiInputBase-root": {
     paddingRight: theme.spacing(7),
@@ -70,7 +69,7 @@ const Gallery = () => {
   return (
     <Box
       padding={4}
-      sx={{ backgroundColor: "primary.dark", minHeight: "100vh" }}
+      sx={{ backgroundColor: "primary.dark", minHeight: "90vh" }}
     >
       <Box
         paddingBottom={2}

@@ -9,7 +9,7 @@ const Application = () => {
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        minHeight: "100vh",
+        minHeight: "90vh",
         display: "flex",
         alignItems: "center",
         color: "#FFFFFF",
@@ -22,6 +22,7 @@ const Application = () => {
           backgroundColor: "rgba(0, 0, 0, 0.7)",
           padding: "20px",
           borderRadius: "10px",
+          height:"100%",
         }}
       >
         <Typography
@@ -52,7 +53,12 @@ const Application = () => {
             variant="contained"
             color="secondary"
             component={Link}
-            sx={{m:1}}
+            sx={{m:1,
+                "&:hover":{
+                    backgroundColor:"primary.dark",
+                    color:"primary.light"
+                }
+            }}
             to="/picture-of-the-day"
           >
             Picture of the Day

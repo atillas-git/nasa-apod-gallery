@@ -63,9 +63,9 @@ const Navbar = ({ window }: IProps) => {
 
   const drawer = (
     <div>
-      <List>
+      <List sx={{backgroundColor:"primary.dark"}}>
         {navItems.map((item) => (
-          <ListItem key={item.title} component={StyledLink} to={item.path}>
+          <ListItem key={item.title} component={StyledLink} to={item.path} sx={{color:"primary.contrastText"}}>
             <ListItemText primary={item.title} />
           </ListItem>
         ))}
@@ -78,7 +78,7 @@ const Navbar = ({ window }: IProps) => {
   return (
     <div>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar sx={{height:"10vh"}}>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link to="/">Nasa Gallery</Link>
           </Typography>
@@ -113,13 +113,14 @@ const Navbar = ({ window }: IProps) => {
         container={container}
         variant="temporary"
         open={mobileOpen}
+        anchor="right"
         onClose={handleDrawerToggle}
         ModalProps={{
           keepMounted: true,
         }}
         sx={{
           display: { xs: "block", sm: "none" },
-          "& .MuiDrawer-paper": { boxSizing: "border-box", width: 240 },
+          "& .MuiDrawer-paper": { boxSizing: "border-box", width: 240,backgroundColor:"primary.dark" },
         }}
       >
         {drawer}

@@ -63,9 +63,14 @@ const Navbar = ({ window }: IProps) => {
 
   const drawer = (
     <div>
-      <List sx={{backgroundColor:"primary.dark"}}>
+      <List sx={{ backgroundColor: "primary.dark" }}>
         {navItems.map((item) => (
-          <ListItem key={item.title} component={StyledLink} to={item.path} sx={{color:"primary.contrastText"}}>
+          <ListItem
+            key={item.title}
+            component={StyledLink}
+            to={item.path}
+            sx={{ color: "primary.contrastText" }}
+          >
             <ListItemText primary={item.title} />
           </ListItem>
         ))}
@@ -78,7 +83,7 @@ const Navbar = ({ window }: IProps) => {
   return (
     <div>
       <AppBar position="static">
-        <Toolbar sx={{height:"10vh"}}>
+        <Toolbar sx={{ height: "10vh" }}>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link to="/">Nasa Gallery</Link>
           </Typography>
@@ -120,7 +125,11 @@ const Navbar = ({ window }: IProps) => {
         }}
         sx={{
           display: { xs: "block", sm: "none" },
-          "& .MuiDrawer-paper": { boxSizing: "border-box", width: 240,backgroundColor:"primary.dark" },
+          "& .MuiDrawer-paper": {
+            boxSizing: "border-box",
+            width: 240,
+            backgroundColor: "primary.dark",
+          },
         }}
       >
         {drawer}
